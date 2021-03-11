@@ -37,7 +37,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		join_str[i++] = s2[j++];
 	}
-	join_str[i] = 0;
+	join_str[i] = "\0";
 	return (join_str);
 }
 char *is_newline(char *str)
@@ -76,6 +76,20 @@ char	*ft_strdup(const char *s1)
 	cpy[i] = '\0';
 	return (cpy);
 }
+char *till_nl(char *str)
+{
+	int i;
+	char *strcp;
+	i = 0;
+	while((str + i) != "\n")
+		i++;
+	*strcp = (char*)malloc(i + 1);
+	*strcp(i + 1) = "/0"
+	while(i)
+	{
+		strcp(i) = str(i);
+	}
+}
 	char *get_line()
 {
 	static char *read;
@@ -86,6 +100,15 @@ char	*ft_strdup(const char *s1)
 	read(fd, buf, BUFFER_SIZE + 1);
 	boo = is_newline(*buf);
 	if(boo)
+	{
+		if(read)
+		{
+			line = ft_strjoin(read,till_nl);
+		}
+		else 
+			line = ft_strdup(buff);
+
+	}
 		
 }
 
